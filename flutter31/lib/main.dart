@@ -13,9 +13,21 @@ class MyApp extends StatelessWidget {
           title: Text('Gradient Opacity'),
         ),
         body: Center(
-          child: Image(
-            width: 300,
-            image: NetworkImage('https://wallpaperaccess.com/full/211836.jpg'),
+          child: ShaderMask(
+            shaderCallback: (rectangle) {
+              return LinearGradient(
+                      colors: [Colors.black, Colors.transparent],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter)
+                  .createShader(
+                      Rect.fromLTRB(0, 0, rectangle.width, rectangle.height));
+            },
+            blendMode: BlendMode.dstIn,
+            child: Image(
+              width: 300,
+              image:
+                  NetworkImage('https://wallpaperaccess.com/full/211836.jpg'),
+            ),
           ),
         ),
       ),
