@@ -45,7 +45,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Play Music'),
+          title: Text(
+            'Play Msic',
+            style: TextStyle(color: Colors.purple),
+          ),
         ),
         body: Center(
           child: Column(
