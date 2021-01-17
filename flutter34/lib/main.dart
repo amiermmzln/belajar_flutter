@@ -12,6 +12,9 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Typography'),
         ),
+        body: Center(
+          child: Column(),
+        ),
       ),
     );
   }
