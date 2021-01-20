@@ -13,9 +13,12 @@ class MyApp extends StatelessWidget {
           title: Text('Custom Clipper'),
         ),
         body: Center(
-          child: Image(
-            image: NetworkImage(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLKK86XYr4B12vJh15thesHKTI12bP7jIzA&usqp=CAU'),
+          child: ClipPath(
+            child: Image(
+              width: 300,
+              image: NetworkImage(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqLKK86XYr4B12vJh15thesHKTI12bP7jIzA&usqp=CAU'),
+            ),
           ),
         ),
       ),
