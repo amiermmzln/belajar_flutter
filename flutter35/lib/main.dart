@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: ClipPath(
+            clipper: MyClipper(),
             child: Image(
               width: 300,
               image: NetworkImage(
@@ -24,4 +25,16 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class MyClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
