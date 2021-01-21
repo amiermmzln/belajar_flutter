@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './post_result_model.dart';
+import 'package:flutter36/post_result_model.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +12,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  PostResult postResult = null;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,9 +25,22 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text('Hasil Kembalian'),
+            Text((postResult != null)
+                ? postResult.id +
+                    " | " +
+                    postResult.name +
+                    " | " +
+                    postResult.job +
+                    " | " +
+                    postResult.created
+                : "tidak ada data"),
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                PostResult.connectToAPI("Suzy", "celebrity").then((value) {
+                  postResult = value;
+                  setState(() {});
+                });
+              },
               child: Text('POST'),
             )
           ],
