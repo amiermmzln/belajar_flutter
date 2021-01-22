@@ -13,6 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   PostResult postResult = null;
+  User user = null;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +26,10 @@ class _MyAppState extends State<MyApp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text((postResult != null)
-                ? postResult.id +
+            Text((user != null)
+                ? user.id +
                     " | " +
-                    postResult.name +
+                    user.name +
                     " | " +
                     postResult.job +
                     " | " +
