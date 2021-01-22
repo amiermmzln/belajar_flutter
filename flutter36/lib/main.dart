@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './post_result_model.dart';
+import './user_model.dart';
 import 'package:flutter36/post_result_model.dart';
 
 void main() {
@@ -37,12 +38,12 @@ class _MyAppState extends State<MyApp> {
                 : "tidak ada data"),
             RaisedButton(
               onPressed: () {
-                PostResult.connectToAPI("Suzy", "celebrity").then((value) {
-                  postResult = value;
+                User.connectToAPI('5').then((value) {
+                  user = value;
                   setState(() {});
                 });
               },
-              child: Text('POST'),
+              child: Text('GET'),
             )
           ],
         ),

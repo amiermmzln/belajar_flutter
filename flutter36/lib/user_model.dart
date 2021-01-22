@@ -9,7 +9,7 @@ class User {
 
   factory User.createUser(Map<String, dynamic> object) {
     return User(
-        id: object['id'],
+        id: object['id'].tostring(),
         name: object['first_name'] + " " + object['last_name']);
   }
 
