@@ -29,8 +29,15 @@ class _MyAppState extends State<MyApp> {
                     child: AnimatedPadding(
                       duration: Duration(seconds: 1),
                       padding: EdgeInsets.all(myPadding),
-                      child: Container(
-                        color: Colors.red,
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            myPadding = 20;
+                          });
+                        },
+                        child: Container(
+                          color: Colors.red,
+                        ),
                       ),
                     ),
                   ),
