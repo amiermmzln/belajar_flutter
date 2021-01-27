@@ -31,6 +31,10 @@ class _MyAppState extends State<MyApp> {
               AnimatedSwitcher(
                 child: myWidget,
                 duration: Duration(seconds: 1),
+                transitionBuilder: (child, animation) => RotationTransition(
+                  turns: animation,
+                  child: child,
+                ),
               ),
               Switch(
                 activeColor: Colors.green,
@@ -40,15 +44,26 @@ class _MyAppState extends State<MyApp> {
                   isON = newValue;
                   setState(() {
                     if (isON)
-                      myWidget = Text(
-                        'Switch: ON',
-                        style: TextStyle(
-                            color: Colors.green,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20),
+                      myWidget = Container(
+                        decoration: BoxDecoration(
+                            color: Colors.blue,
+                            border: Border.all(color: Colors.black, width: 3)),
+                        child: SizedBox(
+                          key: ValueKey(1),
+                          width: 200,
+                          height: 100,
+                          child: Center(
+                            child: Text('Switch: ON',
+                                style: TextStyle(
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 20)),
+                          ),
+                        ),
                       );
                     else
                       myWidget = Container(
+                        key: ValueKey(2),
                         width: 200,
                         height: 100,
                         decoration: BoxDecoration(
