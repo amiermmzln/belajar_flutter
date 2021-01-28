@@ -35,9 +35,7 @@ class _MyAppState extends State<MyApp> {
                             myPadding = 20;
                           });
                         },
-                        child: Container(
-                          color: Colors.red,
-                        ),
+                        child: Container(color: Colors.red),
                       ),
                     ),
                   ),
@@ -46,9 +44,7 @@ class _MyAppState extends State<MyApp> {
                     child: AnimatedPadding(
                       duration: Duration(seconds: 1),
                       padding: EdgeInsets.all(myPadding),
-                      child: Container(
-                        color: Colors.green,
-                      ),
+                      child: Container(color: Colors.green),
                     ),
                   ),
                 ],
@@ -63,9 +59,7 @@ class _MyAppState extends State<MyApp> {
                     child: AnimatedPadding(
                       duration: Duration(seconds: 1),
                       padding: EdgeInsets.all(myPadding),
-                      child: Container(
-                        color: Colors.blue,
-                      ),
+                      child: Container(color: Colors.blue),
                     ),
                   ),
                   Flexible(
@@ -73,9 +67,7 @@ class _MyAppState extends State<MyApp> {
                     child: AnimatedPadding(
                       duration: Duration(seconds: 1),
                       padding: EdgeInsets.all(myPadding),
-                      child: Container(
-                        color: Colors.yellow,
-                      ),
+                      child: Container(color: Colors.yellow),
                     ),
                   ),
                 ],
