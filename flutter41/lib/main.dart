@@ -28,7 +28,9 @@ class _MyAppState extends State<MyApp> {
               Switch(
                 value: isON,
                 onChanged: (newValue) {
-                  isON = newValue;
+                  setState(() {
+                    isON = newValue;
+                  });
                 },
               )
             ],
