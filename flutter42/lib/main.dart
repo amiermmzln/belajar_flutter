@@ -4,16 +4,14 @@ void main() {
   runApp(MyApp());
 }
 
-class  extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
-  _State createState() => _State();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _State extends State<> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }
